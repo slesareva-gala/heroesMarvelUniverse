@@ -4,13 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="icon" href="./images/marvel.ico" type="image/x-icon">
     <script src='./js/main.js' defer></script>
-    <title>WebPack</title>
+    <title>Heroes Marvel Universe</title>
 </head>
 
 <body>
+    <div class="app">
+        <header>
+            <div class="header-logo"></div>
+            <div class="header-title">
+                <span>HEROES</span><span>MARVEL</span><span>UNIVERSE</span>
+            </div>
+            <div class="navbar-toggler">
+                <span class="navbar-toggler-icon">
+                    <svg>
+                        <use href="/images/sprite.svg#menu"></use>
+                    </svg>
+                </span>
+            </div>
+        </header>
 
+        <div class="wrapper">
+            <section class="screen">
+                <h2 class="title"></h2>
+                <div class="not-dbload"></div>
+                <div class="screen-wrapper">
+                    <div class="slider-button-prev swiper-button-disabled">
+                        <svg>
+                            <use href="/images/sprite.svg#prev"></use>
+                        </svg>
+                    </div>
+                    <div class="slider swiper">
+                        <div class="slider-wrapper swiper-wrapper"></div>
+                    </div>
+                    <div class="slider-button-next swiper-button-disabled">
+                        <svg>
+                            <use href="/images/sprite.svg#next"></use>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="navbar">
+                <div class="filter-toggler"></div>
+                <div class="nav-movie-button-prev">
+                    <svg>
+                        <use href="/images/sprite.svg#prev-v"></use>
+                    </svg>
+                </div>
+                <div class="nav-movie swiper">
+                    <div class="nav-movie-wrapper swiper-wrapper"></div>
+                </div>
+                <div class="nav-movie-button-next">
+                    <svg>
+                        <use href="/images/sprite.svg#next-v"></use>
+                    </svg>
+                </div>
+            </nav>
+        </div>
+
+        <div id="preloader">
+            <div id="fountainG">
+                <div id="fountainG_1" class="fountainG"></div>
+                <div id="fountainG_2" class="fountainG"></div>
+                <div id="fountainG_3" class="fountainG"></div>
+                <div id="fountainG_4" class="fountainG"></div>
+                <div id="fountainG_5" class="fountainG"></div>
+                <div id="fountainG_6" class="fountainG"></div>
+                <div id="fountainG_7" class="fountainG"></div>
+                <div id="fountainG_8" class="fountainG"></div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
