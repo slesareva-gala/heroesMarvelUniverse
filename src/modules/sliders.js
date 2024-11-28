@@ -8,9 +8,15 @@ const sliders = () => {
         modules: [Navigation],
         slidesPerView: "auto",
         spaceBetween: 10,
+        centeredSlides: true,
         navigation: {
             nextEl: '.slider-button-next',
             prevEl: '.slider-button-prev',
+        },
+        breakpoints: {
+            360: {
+                centeredSlides: false,
+            },
         },
     });
 
