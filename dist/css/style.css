@@ -1,18 +1,21 @@
 :root {
     --color-basic-rgb: 255, 255, 255;
     --color-basic: rgba(var(--color-basic-rgb), 1);
-    --color-second: black;
+    --color-basik-f: #fff;
+    --color-second-f: #000000;
 
     --color-extra: rgba(217, 163, 4, 1);
     --color-extra-b: rgba(205, 104, 0, 1);
+    --color-extra-f: #D9A304;
+    --color-extra-fb: #CD6800;
 
-    --color-line-rgb: 229, 229, 229;
-    --color-line: rgba(var(--color-line-rgb), 1);
+    --bgcolor-block: rgba(229, 229, 229, 1);
+    --bgcolor-block-b: rgba(200, 200, 200, 1);
     --color-shadow: rgba(0, 0, 0, .5);
 
     --path-logo: url('../images/marvel.png');
     --width-menu: 200px;
-    --width-card: 16rem;
+    --width-card: 18rem;
 }
 
 *,
@@ -121,7 +124,6 @@ body {
 body .app {
     position: relative;
     max-width: 1920px;
-    overflow: hidden;
     margin: 0 auto;
 }
 
@@ -133,10 +135,11 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 
     padding: 0 1rem;
     height: 4rem;
-    background-color: var(--color-second);
+    background-color: var(--color-second-f);
     font-weight: 800;
     z-index: 2;
 }
@@ -164,6 +167,34 @@ header {
     color: var(--color-extra);
 }
 
+.header-panel {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.sifter-toggler {
+    padding: .25rem .75rem;
+}
+
+.sifter-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background: 50%/100% 100% no-repeat
+}
+
+.sifter-toggler-icon svg {
+    display: none;
+    width: 30px;
+    height: 30px;
+    stroke: var(--color-extra-f);
+    cursor: pointer;
+}
+
 .navbar-toggler {
     padding: .25rem .75rem;
 }
@@ -177,9 +208,9 @@ header {
 }
 
 .navbar-toggler-icon svg {
+    display: none;
     width: 30px;
     height: 30px;
-    display: none;
     stroke: var(--color-extra);
     cursor: pointer;
 }
@@ -195,6 +226,7 @@ header {
     flex-direction: row;
     justify-content: space-around;
     height: 561px;
+    position: relative;
     overflow: hidden;
 }
 
@@ -206,7 +238,7 @@ nav.navbar {
     width: var(--width-menu);
     height: 100%;
     padding: .5rem 1rem;
-    background-color: var(--color-line);
+    background-color: var(--bgcolor-block);
     transform: translate(100%);
     transition: .3s;
 }
@@ -273,7 +305,7 @@ nav.navbar {
     height: 25px;
 }
 
-.navbar .filter-toggler {
+.filter-toggler {
     display: inline-block;
     position: relative;
     width: 100%;
@@ -300,7 +332,7 @@ nav.navbar {
     content: "MOVIES";
 }
 
-.navbar .filter-toggler:after {
+.filter-toggler:after {
     content: "";
     position: absolute;
     left: 0;
@@ -314,7 +346,7 @@ nav.navbar {
     z-index: -1;
 }
 
-.navbar .filter-toggler:active {
+.filter-toggler:active {
     border-width: 2px 0 0;
     background: none;
 }
@@ -352,6 +384,12 @@ section.screen {
 .title .more {
     color: var(--color-extra);
     text-transform: none;
+}
+
+.title .text-filter {
+    text-transform: none;
+    font-size: 1.3rem;
+    font-weight: 500;
 }
 
 .screen .not-dbload {
@@ -407,7 +445,7 @@ section.screen {
     min-width: var(--width-card);
     padding: .5rem;
     border-radius: 5px;
-    background-color: var(--color-line);
+    background-color: var(--bgcolor-block);
 }
 
 .heroes .name {
@@ -523,4 +561,108 @@ section.screen {
     .heroes.only-one .heroes-button {
         display: none;
     }
+}
+
+.sifter {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    background-color: var(--color-shadow);
+    transform: translate(100%);
+    overflow: hidden auto;
+}
+
+@media (max-height: 300px) {
+    .sifter {
+        align-items: start;
+        overflow-y: auto;
+    }
+}
+
+.sifter h3 {
+    text-transform: uppercase;
+    color: var(--color-second-f)
+}
+
+.sifter .sifter-content {
+    display: flex;
+    width: fit-content;
+    position: relative;
+    margin-top: 4rem;
+    text-align: center;
+    padding: 30px 20px 20px;
+    background-color: var(--bgcolor-block-b);
+    transition: width .3s;
+}
+
+@media (max-width: 240px) {
+
+    .sifter .sifter-content {
+        width: 100%;
+        min-width: 160px;
+    }
+}
+
+.sifter .sifter-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+
+.sifter-close .close-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--color-second-f);
+    transition: fill 0.2s;
+}
+
+.sifter-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: .5rem;
+    margin-top: .5rem;
+}
+
+.sifter-list .name {
+    width: 5rem;
+    line-height: 1.6rem;
+}
+
+.sifter-list .value {
+    width: 120px;
+    padding: .3rem 1rem;
+    border-radius: 5px;
+    background-color: rgba(var(--color-basic-rgb), .3);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-overflow: ellipsis;
+    outline: none;
+    cursor: pointer;
+}
+
+.sifter-list .value.reset {
+    padding: .2rem 1rem;
+    color: var(--color-extra-b);
+    outline: 1px solid var(--color-extra);
+}
+
+.sifter-close:hover,
+.sifter-close:hover .close-icon {
+    fill: var(--color-extra-fb);
+}
+
+
+
+.sifter .sifter-apply {
+    width: 100%;
+    margin-top: 1rem
 }

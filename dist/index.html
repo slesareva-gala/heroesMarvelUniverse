@@ -18,12 +18,21 @@
             <div class="header-title">
                 <span>HEROES</span><span>MARVEL</span><span>UNIVERSE</span>
             </div>
-            <div class="navbar-toggler">
-                <span class="navbar-toggler-icon">
-                    <svg>
-                        <use href="/images/sprite.svg#menu"></use>
-                    </svg>
-                </span>
+            <div class="header-panel">
+                <div class="sifter-toggler">
+                    <span class="sifter-toggler-icon">
+                        <svg>
+                            <use href="/images/sprite.svg#sifter"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div class="navbar-toggler">
+                    <span class="navbar-toggler-icon">
+                        <svg>
+                            <use href="/images/sprite.svg#menu"></use>
+                        </svg>
+                    </span>
+                </div>
             </div>
         </header>
 
@@ -64,6 +73,45 @@
                     </svg>
                 </div>
             </nav>
+        </div>
+
+        <div class="sifter">
+            <div class="sifter-content">
+                <div class="sifter-close">
+                    <svg class="close-icon icon24">
+                        <use href="/images/sprite.svg#close"></use>
+                    </svg>
+                </div>
+                <div>
+                    <h3>Set filter values</h3>
+                    <div class="sifter-list">
+                        <div class="property">
+                            <span class="name">status</span>
+                            <select id="status" class="value">
+                            </select>
+                        </div>
+                        <div class="property">
+                            <span class="name">species</span>
+                            <select id="species" class="value">
+                            </select>
+                        </div>
+                        <div class="property">
+                            <span class="name">gender</span>
+                            <select id="gender" class="value">
+                            </select>
+                        </div>
+                        <div class="property">
+                            <span class="name">citizenship</span>
+                            <select id="citizenship" class="value">
+                            </select>
+                        </div>
+                        <div class="reset value">reset</div>
+                    </div>
+
+                    <div class="sifter-apply filter-toggler">apply</div>
+
+                </div>
+            </div>
         </div>
 
         <div id="preloader">

@@ -46,3 +46,55 @@ export const animate = ({ draw = () => { }, duration = 1000, timingplane = 'line
         }
     });
 };
+
+// модальное окно
+export const modal = (modal, modalContent, states = 'show', time = undefined) => {
+
+    const shiftContetn = Math.round(modalContent.offsetWidth / 2)
+
+    const actions = {
+
+        show: (time = 1000) => {
+
+            modal.style.transform = 'translateX(0)'
+
+            if (time === 0) {
+                modalContent.style.left = `50%`;
+                modalContent.style.transform = `translateX(-${shiftContetn}px )`;
+
+            } else {
+                animate({
+                    timingplane: 'easeOutExpo',
+                    draw(progress) {
+                        modalContent.style.left = `${100 - progress * 50}%`;
+                        modalContent.style.transform = `translateX( ${-shiftContetn * progress}px )`;
+                    },
+                    duration: time
+                });
+            }
+        },
+
+        hide: (time = 300) => {
+
+            if (time === 0) {
+                modalContent.style.left = ``;
+                modalContent.style.transform = ``;
+                modal.style.transform = '';
+
+            } else {
+                animate({
+                    draw(progress) {
+                        if (progress === 1) {
+                            modal.style.opacity = '';
+                            modalContent.style.left = ``;
+                            modalContent.style.transform = ``;
+                            modal.style.transform = ''
+                        } else modal.style.opacity = `${1 - progress}`;
+                    },
+                    duration: time
+                });
+            }
+        }
+    }
+    if (modal && modalContent) actions[states](time)
+}
