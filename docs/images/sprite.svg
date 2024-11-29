@@ -1,0 +1,53 @@
+<svg width="0" height="0" class="hidden">  
+
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="close">
+    <path d="M3.86726 3.15991L3.16016 3.86702L11.292 11.9988L3.1603 20.1305L3.8674 20.8376L11.9991 12.7059L20.1307 20.8376L20.8378 20.1305L12.7062 11.9988L20.838 3.86702L20.1309 3.15991L11.9991 11.2917L3.86726 3.15991Z"/>
+  </symbol>
+
+  <symbol viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" id="menu">
+    <path stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"
+    d="M4 7h22M4 15h22M4 23h22"></path>
+  </symbol>
+
+  <symbol version="1.0" xmlns="http://www.w3.org/2000/svg" width="28.000000pt" height="49.000000pt" viewBox="0 0 28.000000 49.000000"
+     preserveAspectRatio="xMidYMid meet" id="next">
+    <g transform="translate(0.000000,49.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none">
+    <path d="M30 453 c0 -4 44 -52 97 -105 l98 -98 -100 -100 c-54 -54 -96 -103
+    -92 -107 4 -4 56 41 115 100 l107 107 -105 105 c-98 98 -120 116 -120 98z"/>
+    </g>
+  </symbol>
+
+  <symbol version="1.0" xmlns="http://www.w3.org/2000/svg"  width="28.000000pt" height="49.000000pt" viewBox="0 0 28.000000 49.000000"
+     preserveAspectRatio="xMidYMid meet" id="prev">
+    <g transform="translate(0.000000,49.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none">
+    <path d="M130 345 l-105 -105 107 -107 c59 -59 111 -104 115 -100 4 4 -38 53
+    -92 107 l-100 100 98 98 c53 53 97 101 97 105 0 18 -22 0 -120 -98z"/>
+    </g>
+  </symbol>
+
+  <symbol version="1.0" xmlns="http://www.w3.org/2000/svg" width="32.000000pt" height="18.000000pt" viewBox="0 0 32.000000 18.000000"
+     preserveAspectRatio="xMidYMid meet" id="next-v">
+    <g transform="translate(0.000000,18.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none">
+    <path d="M30 154 c0 -5 29 -39 65 -74 l65 -65 73 75 c78 80 65 77 -21 -4 l-52
+    -50 -65 64 c-36 35 -65 60 -65 54z"/>
+    </g>
+  </symbol>
+
+  <symbol version="1.0" xmlns="http://www.w3.org/2000/svg" width="32.000000pt" height="18.000000pt" viewBox="0 0 32.000000 18.000000"
+      preserveAspectRatio="xMidYMid meet" id="prev-v">
+    <g transform="translate(0.000000,18.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none">
+    <path d="M92 97 c-34 -34 -62 -67 -62 -72 0 -5 29 20 65 55 l65 64 52 -50 c85
+    -80 99 -84 23 -6 -38 40 -72 72 -75 72 -3 0 -34 -28 -68 -63z"/>
+    </g>
+  </symbol>
+
+  <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="sifter">
+    <path d="M3 4.6C3 4.03995 3 3.75992 3.10899 3.54601C3.20487 3.35785 3.35785 3.20487 3.54601 3.10899C3.75992 3 4.03995 3 4.6 3H19.4C19.9601 3 20.2401 3 20.454 3.10899C20.6422 3.20487 20.7951 3.35785 20.891 3.54601C21 3.75992 21 4.03995 21 4.6V6.33726C21 6.58185 21 6.70414 20.9724 6.81923C20.9479 6.92127 20.9075 7.01881 20.8526 7.10828C20.7908 7.2092 20.7043 7.29568 20.5314 7.46863L14.4686 13.5314C14.2957 13.7043 14.2092 13.7908 14.1474 13.8917C14.0925 13.9812 14.0521 14.0787 14.0276 14.1808C14 14.2959 14 14.4182 14 14.6627V17L10 21V14.6627C10 14.4182 10 14.2959 9.97237 14.1808C9.94787 14.0787 9.90747 13.9812 9.85264 13.8917C9.7908 13.7908 9.70432 13.7043 9.53137 13.5314L3.46863 7.46863C3.29568 7.29568 3.2092 7.2092 3.14736 7.10828C3.09253 7.01881 3.05213 6.92127 3.02763 6.81923C3 6.70414 3 6.58185 3 6.33726V4.6Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  
+</svg>
+

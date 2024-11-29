@@ -1,0 +1,668 @@
+:root {
+    --color-basic-rgb: 255, 255, 255;
+    --color-basic: rgba(var(--color-basic-rgb), 1);
+    --color-basik-f: #fff;
+    --color-second-f: #000000;
+
+    --color-extra: rgba(217, 163, 4, 1);
+    --color-extra-b: rgba(205, 104, 0, 1);
+    --color-extra-f: #D9A304;
+    --color-extra-fb: #CD6800;
+
+    --bgcolor-block: rgba(229, 229, 229, 1);
+    --bgcolor-block-b: rgba(200, 200, 200, 1);
+    --color-shadow: rgba(0, 0, 0, .5);
+
+    --path-logo: url('../images/marvel.png');
+    --width-menu: 200px;
+    --width-card: 18rem;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+    font-family: arial, helvetica, clean, sans-serif;
+}
+
+.hide {
+    display: none !important;
+}
+
+#preloader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-shadow);
+    display: none;
+    z-index: 3;
+}
+
+#preloader #fountainG {
+    position: relative;
+    width: 234px;
+    height: 28px;
+    left: 50%;
+    top: 50%;
+    margin-left: -117px;
+    margin-top: -14px
+}
+
+#preloader .fountainG {
+    position: absolute;
+    top: 0;
+    background-color: var(--color-extra);
+    width: 28px;
+    height: 28px;
+    animation-name: bounce_fountainG;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    transform: scale(.3);
+    border-radius: 19px;
+}
+
+#preloader #fountainG_1 {
+    left: 0;
+    animation-delay: .1s;
+}
+
+#preloader #fountainG_2 {
+    left: 29px;
+    animation-delay: .25s;
+}
+
+#preloader #fountainG_3 {
+    left: 58px;
+    animation-delay: .4s;
+}
+
+#preloader #fountainG_4 {
+    left: 88px;
+    animation-delay: .55s;
+}
+
+#preloader #fountainG_5 {
+    left: 117px;
+    animation-delay: .7s;
+}
+
+#preloader #fountainG_6 {
+    left: 146px;
+    animation-delay: .85s;
+}
+
+#preloader #fountainG_7 {
+    left: 175px;
+    animation-delay: 1s;
+}
+
+#preloader #fountainG_8 {
+    left: 205px;
+    animation-delay: 1.14s;
+}
+
+@keyframes bounce_fountainG {
+    0% {
+        transform: scale(1);
+        background-color: var(--color-extra);
+    }
+
+    to {
+        transform: scale(.3);
+        background-color: var(--color-basic);
+    }
+}
+
+body .app {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+    padding: 0 1rem;
+    height: 4rem;
+    background-color: var(--color-second-f);
+    font-weight: 800;
+    z-index: 2;
+}
+
+.header-logo {
+    flex-shrink: 4;
+    width: 4rem;
+    height: 2rem;
+    background-image: var(--path-logo);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    color: var(--color-basic);
+    font-size: 2rem;
+}
+
+.header-title span:nth-child(2) {
+    color: var(--color-extra);
+}
+
+.header-panel {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.sifter-toggler {
+    padding: .25rem .75rem;
+}
+
+.sifter-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background: 50%/100% 100% no-repeat
+}
+
+.sifter-toggler-icon svg {
+    display: none;
+    width: 30px;
+    height: 30px;
+    stroke: var(--color-extra-f);
+    cursor: pointer;
+}
+
+.navbar-toggler {
+    padding: .25rem .75rem;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background: 50%/100% 100% no-repeat
+}
+
+.navbar-toggler-icon svg {
+    display: none;
+    width: 30px;
+    height: 30px;
+    stroke: var(--color-extra);
+    cursor: pointer;
+}
+
+
+.app.menu-open .navbar-toggler-icon svg {
+    stroke: var(--color-basic);
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 561px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: var(--width-menu);
+    height: 100%;
+    padding: .5rem 1rem;
+    background-color: var(--bgcolor-block);
+    transform: translate(100%);
+    transition: .3s;
+}
+
+@media (max-width: 640px) {
+    nav.navbar {
+        position: absolute;
+        left: unset;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 200px) {
+    nav.navbar {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.app.menu-open nav.navbar {
+    transform: translate(0);
+}
+
+.nav-movie-wrapper {
+    height: 450px;
+}
+
+.nav-movie-slide {
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    padding: .3rem 1rem;
+    border-radius: 5px;
+    background-color: rgba(var(--color-basic-rgb), .3);
+    cursor: pointer;
+}
+
+.nav-movie-slide.active {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-extra-b);
+    background-color: var(--color-basic);
+}
+
+.nav-movie-button-prev,
+.nav-movie-button-next {
+    cursor: pointer;
+    width: 41px;
+    height: 25px;
+}
+
+.nav-movie-button-prev.swiper-button-disabled,
+.nav-movie-button-next.swiper-button-disabled {
+    opacity: 0;
+    cursor: default;
+}
+
+.nav-movie-button-prev svg,
+.nav-movie-button-next svg {
+    width: 41px;
+    height: 25px;
+}
+
+.filter-toggler {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+
+    border: solid transparent;
+    border-radius: 5px;
+    border-width: 0 0 2px;
+    background-color: var(--color-extra-b);
+
+    color: var(--color-basic);
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: .3rem 1rem .1rem;
+    text-align: center;
+    transform: translateZ(0);
+    cursor: pointer;
+}
+
+.navbar .filter-toggler:before {
+    content: "HEROES";
+}
+
+.navbar .filter-toggler.film:before {
+    content: "MOVIES";
+}
+
+.filter-toggler:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: -2px;
+    background-color: var(--color-extra);
+    border: solid transparent;
+    border-radius: 5px;
+    border-width: 0 0 2px;
+    z-index: -1;
+}
+
+.filter-toggler:active {
+    border-width: 2px 0 0;
+    background: none;
+}
+
+section.screen {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    transition: .3s;
+}
+
+@media (min-width: 641px) {
+    .app.menu-open section.screen {
+        width: calc(100% - var(--width-menu));
+    }
+}
+
+.screen .title {
+    display: inline-block;
+    position: relative;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.screen .title:after {
+    content: "";
+    display: block;
+    width: 12rem;
+    height: 0.2rem;
+    margin-top: 0.5rem;
+    background: var(--color-extra);
+}
+
+.title .more {
+    color: var(--color-extra);
+    text-transform: none;
+}
+
+.title .text-filter {
+    text-transform: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.screen .not-dbload {
+    position: absolute;
+    top: 4rem;
+}
+
+.screen .slider {
+    margin-top: 1rem;
+}
+
+.slider .slider-wrapper {
+    height: 30.3rem;
+}
+
+.screen-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.slider-button-prev,
+.slider-button-next {
+    cursor: pointer;
+}
+
+@media (max-width: 450px) {
+
+    .slider-button-prev,
+    .slider-button-next {
+        display: none !important;
+    }
+}
+
+.slider-button-prev.swiper-button-disabled,
+.slider-button-next.swiper-button-disabled {
+    opacity: 0;
+    cursor: default;
+}
+
+.slider-button-prev svg,
+.slider-button-next svg {
+    width: 40px;
+    height: 65px;
+}
+
+.heroes {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: unset;
+    min-width: var(--width-card);
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: var(--bgcolor-block);
+}
+
+.heroes .name {
+    text-align: center;
+}
+
+.heroes .real-name {
+    display: inline-block;
+    width: 100%;
+    height: 1.4rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.heroes .info {
+    position: relative;
+    cursor: grab;
+}
+
+@media (min-width: 905px) {
+    .heroes.only-one .info {
+        display: flex;
+        cursor: default;
+    }
+}
+
+
+.heroes .image {
+    display: block;
+    margin: 0 auto;
+    height: 25rem;
+}
+
+.heroes .more {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: .5rem;
+    padding-left: 1.5rem;
+    background-color: var(--color-basic);
+    opacity: 0;
+    transition: .3s;
+}
+
+@media (min-width: 905px) {
+    .heroes.only-one .more {
+        position: relative;
+        width: var(--width-card);
+        opacity: 1;
+    }
+}
+
+
+.heroes-description {
+    font-size: .8rem;
+}
+
+.heroes-description .property {
+    display: inline-block;
+    width: 30%;
+    font-weight: 600;
+}
+
+.heroes-description .value {
+    display: inline-block;
+    padding-left: .1rem;
+}
+
+.more .heroes-movies {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.heroes-description .movies {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.heroes-description .movie {
+    display: inline-block;
+    margin-top: 0.3rem;
+}
+
+.heroes-button {
+    display: inline-block;
+    position: relative;
+    margin-top: .3rem;
+    cursor: pointer;
+}
+
+.heroes-button:before {
+    content: 'go info';
+    padding: .2rem;
+    font-size: .8rem;
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--color-extra-b);
+}
+
+.heroes-button.its-info:before {
+    content: 'go photo';
+}
+
+@media (min-width: 905px) {
+    .heroes.only-one .heroes-button {
+        display: none;
+    }
+}
+
+.sifter {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    background-color: var(--color-shadow);
+    transform: translate(100%);
+    overflow: hidden auto;
+}
+
+@media (max-height: 300px) {
+    .sifter {
+        align-items: start;
+        overflow-y: auto;
+    }
+}
+
+.sifter h3 {
+    text-transform: uppercase;
+    color: var(--color-second-f)
+}
+
+.sifter .sifter-content {
+    display: flex;
+    width: fit-content;
+    position: relative;
+    margin-top: 4rem;
+    text-align: center;
+    padding: 30px 20px 20px;
+    background-color: var(--bgcolor-block-b);
+    transition: width .3s;
+}
+
+@media (max-width: 240px) {
+
+    .sifter .sifter-content {
+        width: 100%;
+        min-width: 160px;
+    }
+}
+
+.sifter .sifter-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+
+.sifter-close .close-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--color-second-f);
+    transition: fill 0.2s;
+}
+
+.sifter-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: .5rem;
+    margin-top: .5rem;
+}
+
+.sifter-list .name {
+    width: 5rem;
+    line-height: 1.6rem;
+}
+
+.sifter-list .value {
+    width: 120px;
+    padding: .3rem 1rem;
+    border-radius: 5px;
+    background-color: rgba(var(--color-basic-rgb), .3);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-overflow: ellipsis;
+    outline: none;
+    cursor: pointer;
+}
+
+.sifter-list .value.reset {
+    padding: .2rem 1rem;
+    color: var(--color-extra-b);
+    outline: 1px solid var(--color-extra);
+}
+
+.sifter-close:hover,
+.sifter-close:hover .close-icon {
+    fill: var(--color-extra-fb);
+}
+
+
+
+.sifter .sifter-apply {
+    width: 100%;
+    margin-top: 1rem
+}
