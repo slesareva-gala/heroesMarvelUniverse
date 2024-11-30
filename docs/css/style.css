@@ -216,7 +216,8 @@ header {
 }
 
 
-.app.menu-open .navbar-toggler-icon svg {
+.app.menu-open .navbar-toggler-icon svg,
+.app.sifter-open .sifter-toggler-icon svg {
     stroke: var(--color-basic);
 }
 

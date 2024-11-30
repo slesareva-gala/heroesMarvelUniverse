@@ -28,21 +28,27 @@ const event = (maxMediaMenu) => {
             if (window.screen.width < maxMediaMenu + 1) app.classList.remove('menu-open')
         },
         '.sifter-toggler-icon svg': () => {
+            app.classList.add('sifter-open')
             modal(elSifter, elSifterContent, 'show', window.innerWidth < 768 ? 0 : undefined)
         },
         '.sifter .sifter-close': () => {
+            app.classList.remove('sifter-open')
             modal(elSifter, elSifterContent, 'hide', window.innerWidth < 768 ? 0 : undefined)
         },
         '.sifter-list .value.reset': () => {
             resetSifter()
         },
         '.sifter .sifter-apply': (t) => {
+            app.classList.remove('sifter-open')
             modal(elSifter, elSifterContent, 'hide', window.innerWidth < 768 ? 0 : undefined)
             setSifter()
             filter(t)
         },
         '.sifter': (t) => {
-            if (t === elSifter) modal(elSifter, elSifterContent, 'hide', window.innerWidth < 768 ? 0 : undefined)
+            if (t === elSifter) {
+                app.classList.remove('sifter-open')
+                modal(elSifter, elSifterContent, 'hide', window.innerWidth < 768 ? 0 : undefined)
+            }
         },
     }
 
